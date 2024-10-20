@@ -1,0 +1,293 @@
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+    text-align: center; /* Center text globally */
+}
+
+#app {
+    margin: 0 auto; /* Center the app container */
+    max-width: 600px; /* Limit the max width for better alignment */
+}
+
+/* Dark mode toggle button */
+#toggle-dark-mode {
+    margin-bottom: 10px; /* Add margin to separate from search input */
+    display: block; /* Change from fixed to block for stacking */
+    width: 150px; /* Make it full width */
+}
+
+/* Button styles */
+button {
+    padding: 10px 20px;
+    margin: 10px auto; /* Center buttons */
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    font-size: 16px;
+    transition: background-color 0.3s;
+    display: block; /* Change to block to stack buttons */
+    width: 150px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Search bar styling */
+#search-input {
+    padding: 12px 20px;
+    margin: 10px auto; /* Center the input */
+    width: 100%;
+    max-width: 400px;
+    border-radius: 25px; /* Rounded corners */
+    border: 1px solid #ccc;
+    font-size: 16px;
+    outline: none;
+    transition: border 0.3s;
+}
+
+#search-input:focus {
+    border-color: #3498db; /* Blue border on focus */
+}
+
+/* Custom File Input Styles */
+#file-input {
+    display: none; /* Hide the actual input */
+}
+
+.custom-file-upload {
+    display: block; /* Change to block for stacking */
+    padding: 10px 20px;
+    margin: 10px auto; /* Center button */
+    cursor: pointer;
+    border-radius: 20px;
+    background-color: #3498db;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s;
+    width: 115px;
+}
+
+.custom-file-upload:hover {
+    background-color: #2980b9;
+}
+
+/* Results and selected series */
+#selected-series {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Spacing between series cards */
+    margin-top: 20px; /* Space above the selected series section */
+}
+
+.series {
+    margin: 10px;
+    text-align: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    background-color: white;
+    width: 150px;
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.series:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+img {
+    width: 100px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px; /* Rounded series poster */
+}
+
+.series h2 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #2c3e50;
+    margin: 10px 0 5px;
+}
+
+.series p {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Suggestions dropdown */
+#suggestions {
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    max-height: 320px; /* Show up to 4 items */
+    overflow-y: auto;
+    width: 100%;
+    max-width: 400px;
+    left: 50%; /* Position the dropdown in the center */
+    transform: translateX(-50%); /* Center it horizontally */
+    margin-top: 5px; /* Space above the dropdown */
+    z-index: 1000;
+    border-radius: 15px; /* Rounded dropdown */
+}
+
+/* Removing the horizontal line */
+.suggestion-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;  
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #f0f0f0;
+}
+
+.suggestion-item img {
+    width: 50px;
+    height: 75px;
+    margin-right: 10px;
+    border-radius: 5px;
+}
+
+.suggestion-item span {
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* Modal (TV Series Details) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 50%; /* Move to the center of the viewport */
+    top: 50%; /* Move to the center of the viewport */
+    width: 90%; /* 90% of the viewport width */
+    max-width: 600px; /* Optional: limit max width */
+    height: auto; /* Allow height to be auto based on content */
+    transform: translate(-50%, -50%); /* Center the modal */
+    background-color: rgba(0, 0, 0, 0.8); /* Dark overlay background */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fff; /* White background for modal content */
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    text-align: left;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Add some depth */
+}
+
+/* Optional: Add a border radius to the modal itself for consistency */
+.modal {
+    border-radius: 20px; /* Optional rounded corners for modal */
+    overflow: hidden; /* Ensure corners are clean */
+}
+
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 20px; /* Rounded corners */
+    max-width: 600px;
+    width: 90%; /* Responsive width */
+    text-align: left;
+    position: relative;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); /* Add some depth */
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #666;
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.modal-content p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Styling for different text sections in modal */
+.modal-content p span {
+    font-weight: bold;
+    color: #424b52; /* blue */
+}
+
+.modal-content p span.italic {
+    font-style: italic;
+    color: #009fcf; /* purple */
+}
+
+.modal-content p span.highlight {
+    font-weight: bold;
+    color: #e74c3c; /* red for emphasis */
+}
+
+.modal-content p span.subtle {
+    color: #c57104; /* grey for less important text */
+}
+
+/* Centered watched button */
+.modal-content button {
+    display: block; /* Center the button */
+    margin: 20px auto 0; /* Add margin above and center */
+    background-color: #28a745; /* Green */
+    color: white;
+    border-radius: 25px;
+}
+
+.modal-content button:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+/* Dark Mode Styles */
+body.dark {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+}
+
+body.dark h1, body.dark h2 {
+    color: #ecf0f1;
+}
+
+body.dark button {
+    background-color: #16a085; /* Darker button color */
+}
+
+body.dark button:hover {
+    background-color: #1abc9c; /* Even darker on hover */
+}
+
+body.dark #search-input {
+    background-color: #34495e;
+    color: #ecf0f1;
+}
+
+body.dark #search-input:focus {
+    border-color: #1abc9c; /* Blue border on focus */
+}
+
+body.dark .custom-file-upload {
+    background-color: #16a085; /* Darker button color */
+}
+
+body.dark .custom-file-upload:hover {
+    background-color: #1abc9c; /* Even darker on hover */
+}

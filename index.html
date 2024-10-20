@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TV Series Playlist Organizer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <h1>TV Series Playlist Organizer</h1>
+        <button id="toggle-dark-mode">Dark Mode</button>
+        <input type="text" id="search-input" placeholder="Search for a TV series..." />
+        <div id="suggestions"></div>
+
+        <h2>Listed Series</h2>
+        <div id="selected-series"></div>
+
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span id="close-modal" class="close">&times;</span>
+                <h2 id="series-title"></h2>
+                <div id="series-details">
+                    <p id="series-overview"></p>
+                    <p id="series-rating"></p>
+                    <p id="series-seasons"></p>
+                    <p id="series-genres"></p>
+                    <p id="series-status"></p>
+                </div>
+                <button id="mark-watched">Mark as Watched</button>
+            </div>
+        </div>
+
+        <button id="download-btn">Download List</button>
+
+        <!-- Custom File Input -->
+        <label for="file-input" class="custom-file-upload">Load List</label>
+        <input type="file" id="file-input" accept=".json" />
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
